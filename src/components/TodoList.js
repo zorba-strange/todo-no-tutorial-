@@ -1,18 +1,19 @@
 const React             = require('react');
 const { connect }       = require('react-redux');
+const Todo              = require('./Todo').default;
 
 
 const Todos = ({todos}) => {
+    console.log(todos)
     return (
-        <div>
-            {todos.map((todo, index) => <div key={index}>{todo.task}</div>)}
-        </div>
+        <tr>
+            {todos.map((todo, index) => <Todo key={index}{...todo} />)}
+        </tr>
     )
 }
 
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
         todos: state.todos
     }

@@ -5,15 +5,16 @@ const {
 
 
 export const addTodo = (task) => {
+    console.log('adding');
     return {
-        action: ADD_TODO,
         task,
+        type: ADD_TODO,
     }
-};
+}
 
 export const editTodo = (index) => {
     return {
-        action: EDIT_TODO,
+        type: EDIT_TODO,
         index
     }
 }

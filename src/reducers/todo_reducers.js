@@ -18,15 +18,15 @@ const todoApp = (state=seed, action) => {
     switch( action.type ){
 
         case ADD_TODO:
-            return (
-                [
-                    ...state,
+            return Object.assign({}, state, {
+                todos: [
+                    ...state.todos,
                     {
                         task: action.task,
                         isDone: false
                     }
                 ]
-            );
+            });
 
         case EDIT_TODO:
             return (
