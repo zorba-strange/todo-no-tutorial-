@@ -1,9 +1,10 @@
 const React             = require('react');
+const TodoList          = require('./TodoList').default;
 
 
 const App = () => {
     return (
-        <div>Hello World</div>
+        <TodoList />
     )
 };
 
