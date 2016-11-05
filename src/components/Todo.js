@@ -2,6 +2,7 @@ const React           = require('react');
 const EditTodo        = require('./EditTodo').default;
 const { connect }     = require('react-redux');
 const { saveTodo }    = require('../actions/action_creators');
+const { deleteTodo }    = require('../actions/action_creators');
 
 const todo = ({task, isDone, editing, index, dispatch }) => {
     console.log('editing', editing);
@@ -24,7 +25,11 @@ const todo = ({task, isDone, editing, index, dispatch }) => {
             <tr>
                 <td>{task}</td>
                 <EditTodo index={index} editing={editing}/>
-            <td><button>Delete</button></td>
+                <td><button onClick={(e) => {
+                    e.preventDefault();
+                    dispatch(deleteTodo(index));
+                }}>Delete</button></td>
+
         </tr>
         )
     }

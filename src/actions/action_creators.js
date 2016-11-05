@@ -1,7 +1,8 @@
 const { 
     ADD_TODO,
     EDIT_TODO,
-    SAVE_TODO
+    SAVE_TODO,
+    DELETE_TODO
 }                           = require('./ACTION_TYPES'); 
 
 
@@ -27,5 +28,13 @@ export const saveTodo = (index, task) => {
         type: SAVE_TODO,
         index,
         task
+    }
+}
+
+export const deleteTodo = (index) => {
+    console.log('delete');
+    return {
+        type: DELETE_TODO,
+        index
     }
 }

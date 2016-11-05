@@ -1,8 +1,10 @@
+const _                         = require('lodash');
 const { combineReducers }       = require('redux');
 const { 
     ADD_TODO,
     EDIT_TODO,
-    SAVE_TODO
+    SAVE_TODO,
+    DELETE_TODO
 }                               = require('../actions/ACTION_TYPES');
 
 const uid = () => Math.random().toString(34).slice(2);
@@ -57,6 +59,13 @@ const todoApp = (state=seed, action) => {
                     }
                     return todo;
                 })})
+
+        case DELETE_TODO:
+            return Object.assign({}, state, {
+                todos: _.remove(state.todos, (todo) => {
+                    return (todo.index != action.index)
+                })
+            })
 
         default:
             return state;
