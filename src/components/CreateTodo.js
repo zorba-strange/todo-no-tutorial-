@@ -2,7 +2,6 @@ const React             = require('react');
 const { connect }       = require('react-redux');
 const { addTodo }       = require('../actions/action_creators');
 
-console.log(addTodo('hello'));
 
 const Create = ({dispatch}) => {
     let input;
