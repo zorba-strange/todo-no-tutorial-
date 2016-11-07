@@ -4,7 +4,7 @@ const Todo              = require('./Todo').default;
 
 
 const Todos = ({todos}) => {
-    console.log({todos});
+    // console.log({todos});
     return (
         <tr>
             {todos.map((todo) => {

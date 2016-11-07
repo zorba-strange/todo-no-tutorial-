@@ -3,8 +3,9 @@ const { connect }     = require('react-redux');
 const { editTodo }    = require('../actions/action_creators');
 
 const editTodos = ({index, editing, dispatch}) => {
-    console.log('edit index', index);
-    console.log('edit index', editing);
+    // console.log('edit index', index);
+    // console.log('edit index', editing);
+    console.log(dispatch);
     return (
         <td><button onClick={(e) => {
             console.log('edit');
